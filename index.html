@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Notas Finales</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
+
+  <div class="bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-2xl w-full max-w-md border border-gray-700">
+    <div class="text-center mb-6">
+      <h1 class="text-3xl font-bold text-cyan-400">Calculadora de Notas</h1>
+      <p class="text-gray-400 mt-2">Ingresa tus notas para saber tu destino.</p>
+    </div>
+
+    <form id="grade-form" class="space-y-4">
+      <div>
+        <label for="nota1" class="block text-sm font-medium text-gray-300 mb-1">
+          Nota Unidad 1 (33%)
+        </label>
+        <input type="number" id="nota1" step="0.01" min="0" max="20" 
+          placeholder="Ej: 15" 
+          class="w-full bg-gray-700 text-white p-3 rounded-lg border border-gray-600 focus:border-cyan-500 input-glow transition duration-300">
+      </div>
+
+      <div>
+        <label for="nota2" class="block text-sm font-medium text-gray-300 mb-1">
+          Nota Unidad 2 (33%)
+        </label>
+        <input type="number" id="nota2" step="0.01" min="0" max="20" 
+          placeholder="Ej: 12" 
+          class="w-full bg-gray-700 text-white p-3 rounded-lg border border-gray-600 focus:border-cyan-500 input-glow transition duration-300">
+      </div>
+
+      <div>
+        <label for="nota3" class="block text-sm font-medium text-gray-300 mb-1">
+          Nota Unidad 3 (34%)
+        </label>
+        <input type="number" id="nota3" step="0.01" min="0" max="20" 
+          placeholder="Deja en blanco si no la sabes" 
+          class="w-full bg-gray-700 text-white p-3 rounded-lg border border-gray-600 focus:border-cyan-500 input-glow transition duration-300">
+      </div>
+
+      <button type="submit" 
+        class="w-full bg-cyan-500 hover:bg-cyan-600 text-gray-900 font-bold py-3 px-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+        Calcular Promedio
+      </button>
+    </form>
+
+    <!-- Área de resultados -->
+    <div id="result-area" class="mt-6 text-center hidden p-6 rounded-lg transition-all duration-500">
+      <h2 id="result-status" class="text-3xl font-bold"></h2>
+      <p id="result-message" class="text-lg mt-1"></p>
+    </div>
+  </div>
+
+  <!-- Tus audios -->
+  <audio id="victory-sound" src="assets/victoria.mp3" preload="auto"></audio>
+  <audio id="defeat-sound" src="assets/derrota.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
