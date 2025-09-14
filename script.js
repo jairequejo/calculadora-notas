@@ -89,6 +89,12 @@ nota2Input.addEventListener("input", handlePlaceholderLogic);
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  // Detener sonidos previos
+  victoriaSound.pause();
+  derrotaSound.pause();
+
+  // Validar entradas
+
   const n1 = parseFloat(nota1Input.value) || 0;
   const n2 = parseFloat(nota2Input.value) || 0;
   const n3Str = nota3Input.value;
